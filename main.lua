@@ -28,6 +28,7 @@ end
     https://github.com/Squishy6094/character-select-coop/wiki/API-Documentation
 ]]
 
+
 characterTable = {
     {
         -- Basic Character Info
@@ -36,10 +37,10 @@ characterTable = {
         description = "This is a description that tells about your character.",
         credits = "Gloo",
         color = { r = 255, g = 255, b = 255 },               -- Menu Color
-        model = smlua_model_util_get_id("template_mario_geo"), -- Replace custom_model to your character model's name.
+        model = smlua_model_util_get_id("samus_geo"),        -- Replace custom_model to your character model's name.
         forceChar = CT_MARIO,                                -- Builds upon Vanilla Character
         lifeIcon = get_texture_info("exclamation-icon"),     -- File extension (.png) not needed here, converted to .tex on refresh
-        camScale = 1,                                        -- Sets the camera scale of your character in the CS menu
+        camScale = 1.1,                                      -- Sets the camera scale of your character in the CS menu
 
         graffiti = get_texture_info("exclamation-icon"),
 
