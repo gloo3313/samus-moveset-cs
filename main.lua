@@ -147,21 +147,25 @@ characterTable = {
         	[CHAR_SOUND_DROWNING] = 'CustomDrowning.ogg', -- Running out of air underwater
         	[CHAR_SOUND_MAMA_MIA] = 'CustomLeaveLevel.ogg' -- Booted out of level
         },
-        
+
         -- Replaces Vanilla Animations or Adds Custom Animations.
         anims = {
             -- CS Menu Anim Pose
-            [charSelect.CS_ANIM_MENU] = 'CS_CUSTOM',
+            [charSelect.CS_ANIM_MENU] = 'CS_ANIM_MENU',
+            [CHAR_ANIM_SINGLE_JUMP] = 'SPIN_JUMP',
+            [CHAR_ANIM_DOUBLE_JUMP_RISE] = 'SPIN_JUMP',
+            [CHAR_ANIM_DOUBLE_JUMP_FALL] = 'SPIN_JUMP',
+            [MARIO_ANIM_TRIPLE_JUMP] = 'SPIN_JUMP',
+            [CHAR_ANIM_IDLE_HEAD_LEFT] = 'STANDING',
+            [CHAR_ANIM_IDLE_HEAD_RIGHT] = 'STANDING',
+            [CHAR_ANIM_IDLE_HEAD_CENTER] = 'STANDING',
+            [CHAR_ANIM_RUNNING] = 'RUNNING',
+            -- [CHAR_ANIM_AIR_KICK] = 'mario_anim_walking',
         },
 
         -- Forces Eye State if in Animation.
         eyes = {
             [charSelect.CS_ANIM_MENU] = MARIO_EYES_OPEN,
-        },
-
-        -- Forces Hand State if in Animation.
-        hands = {
-            [charSelect.CS_ANIM_MENU] = MARIO_HAND_PEACE_SIGN,
         },
     },
 
