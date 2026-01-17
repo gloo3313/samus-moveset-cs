@@ -1,4 +1,4 @@
--- name: [CS] Template
+-- name: [CS] Samus
 -- description: <Mod Description Here>\n\nMade by: <Creator Name Here>\n\n\\#ff7777\\This Pack requires Character Select\nto use as a Library!
 -- category: cs
 
@@ -31,10 +31,10 @@ end
 characterTable = {
     {
         -- Basic Character Info
-        name = "Custom Character",
+        name = "Samus",
         nickname = "Dialog Name",
         description = "This is a description that tells about your character.",
-        credits = "Creator",
+        credits = "Gloo",
         color = { r = 255, g = 255, b = 255 },               -- Menu Color
         model = smlua_model_util_get_id("template_mario_geo"), -- Replace custom_model to your character model's name.
         forceChar = CT_MARIO,                                -- Builds upon Vanilla Character
