@@ -72,26 +72,70 @@ characterTable = {
         -- Character Palettes
         palettes = {
             {
-                name     = "Default",
-                [PANTS]  = 'ffffff',
-                [SHIRT]  = 'ffffff',
-                [GLOVES] = 'ffffff',
-                [SHOES]  = 'ffffff',
-                [HAIR]   = 'ffffff',
-                [SKIN]   = 'ffffff',
-                [CAP]    = 'ffffff',
-                [EMBLEM] = 'ffffff'
+                name     = "Varia Suit",
+                [PANTS]  = 'E0B32A', --Inner Armor
+                [SHIRT]  = 'DF4102', --Outer Armor
+                [GLOVES] = '348841', --Arm Cannon
+                [SHOES]  = '3F3938', --Black Parts
+                [HAIR]   = 'DB9F00', --Hair
+                [SKIN]   = 'FEC179', --Skin
+                [CAP]    = 'dd0000', --Helmet
+                [EMBLEM] = '00dd00'  --Visor
             },
             {
-                name     = "Alt",
-                [PANTS]  = 'ffffff',
-                [SHIRT]  = 'ffffff',
-                [GLOVES] = 'ffffff',
-                [SHOES]  = 'ffffff',
-                [HAIR]   = 'ffffff',
-                [SKIN]   = 'ffffff',
-                [CAP]    = 'ffffff',
-                [EMBLEM] = 'ffffff'
+                name     = "Power Suit",
+                [PANTS]  = 'E0B32A', --Inner Armor
+                [SHIRT]  = 'E0B32A', --Outer Armor
+                [GLOVES] = '348841', --Arm Cannon
+                [SHOES]  = '3F3938', --Black Parts
+                [HAIR]   = 'DB9F00', --Hair
+                [SKIN]   = 'FEC179', --Skin
+                [CAP]    = 'dd0000', --Helmet
+                [EMBLEM] = '00dd00'  --Visor
+            },
+            {
+                name     = "Gravity Suit",
+                [PANTS]  = 'E0B32A', --Inner Armor
+                [SHIRT]  = '7934AC', --Outer Armor
+                [GLOVES] = '348841', --Arm Cannon
+                [SHOES]  = '3F3938', --Black Parts
+                [HAIR]   = 'DB9F00', --Hair
+                [SKIN]   = 'FEC179', --Skin
+                [CAP]    = 'dd0000', --Helmet
+                [EMBLEM] = '00dd00'  --Visor
+            },
+            {
+                name     = "Pink",
+                [PANTS]  = 'E0B32A', --Inner Armor
+                [SHIRT]  = 'DF4387', --Outer Armor
+                [GLOVES] = '348841', --Arm Cannon
+                [SHOES]  = '3F3938', --Black Parts
+                [HAIR]   = 'DB9F00', --Hair
+                [SKIN]   = 'FEC179', --Skin
+                [CAP]    = 'dd0000', --Helmet
+                [EMBLEM] = '00dd00'  --Visor
+            },
+            {
+                name     = "Green",
+                [PANTS]  = 'E0B32A', --Inner Armor
+                [SHIRT]  = '199900', --Outer Armor
+                [GLOVES] = '348841', --Arm Cannon
+                [SHOES]  = '3F3938', --Black Parts
+                [HAIR]   = 'DB9F00', --Hair
+                [SKIN]   = 'FEC179', --Skin
+                [CAP]    = 'dd0000', --Helmet
+                [EMBLEM] = '00dd00'  --Visor
+            },
+            {
+                name     = "Dark Red",
+                [PANTS]  = 'E0B32A', --Inner Armor
+                [SHIRT]  = '30161f', --Outer Armor
+                [GLOVES] = '348841', --Arm Cannon
+                [SHOES]  = '3F3938', --Black Parts
+                [HAIR]   = 'DB9F00', --Hair
+                [SKIN]   = 'FEC179', --Skin
+                [CAP]    = 'dd0000', --Helmet
+                [EMBLEM] = '00dd00'  --Visor
             },
         },
 
