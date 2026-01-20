@@ -4,6 +4,7 @@
 
 -- Replace Mod Name with your Character/Pack name.
 local TEXT_PACK_NAME = "Custom Character Pack"
+local highJump = false
 
 -- Stops mod from loading if Character Select isn't on, Does not need to be touched
 if not charSelect then
@@ -11,6 +12,71 @@ if not charSelect then
     "\\#ffffa0\\"..TEXT_PACK_NAME.." requires\nCharacter Select to be enabled.\n\nPlease rehost with it enabled.", 4)
     return
 end
+
+--- @param m MarioState
+--- @param action ActionTable
+local function context_jump(m, action)
+    if highJump then
+        jumpUsed = ACT_TRIPLE_JUMP
+    else
+        jumpUsed = ACT_JUMP
+    end
+
+    if m.forwardVel < 2 and action == ACT_JUMP then
+        return ACT_DOUBLE_JUMP
+    elseif m.forwardVel >= 2 and action == ACT_DOUBLE_JUMP then
+        return jumpUsed
+	elseif m.forwardVel >= 2 and (action == ACT_JUMP or action == ACT_TRIPLE_JUMP) then
+        return jumpUsed
+	elseif m.forwardVel >= 2 and action == ACT_DOUBLE_JUMP then
+        return jumpUsed
+	elseif m.action == ACT_TRIPLE_JUMP_LAND >= 2 and (action == ACT_TRIPLE_JUMP or action == ACT_JUMP) then
+        return jumpUsed
+    end
+end
+hook_event(HOOK_BEFORE_SET_MARIO_ACTION, context_jump)
+
+--- @param m MarioState
+local function multiple_jumps(m)
+    if (m.controller.buttonPressed & A_BUTTON) ~= 0 and m.vel.y < 0 then
+        m.vel.y = 80
+        set_mario_action(m, ACT_JUMP, 0)
+    end
+end
+
+-- hooks --
+hook_event(HOOK_MARIO_UPDATE, multiple_jumps)
+
+local speedMultiplier = 1
+local speedAccel = 0.04
+local maxSpeedMultiplier = 3
+
+--- @param m MarioState
+local function run_faster(m)
+    if (m.controller.buttonDown & X_BUTTON) ~= 0 and (m.action == ACT_WALKING or m.action == ACT_JUMP or m.action == ACT_TRIPLE_JUMP) then
+        if speedMultiplier < maxSpeedMultiplier then
+            speedMultiplier = speedMultiplier + speedAccel
+        elseif speedMultiplier > maxSpeedMultiplier then
+            speedMultiplier = maxSpeedMultiplier
+        end
+    elseif (m.controller.buttonDown & X_BUTTON) ~= 0 and (m.action == ACT_JUMP or m.action == ACT_TRIPLE_JUMP) then
+    else
+        if speedMultiplier > 1 then
+            speedMultiplier = speedMultiplier - speedAccel
+        elseif speedMultiplier < 1 then
+            speedMultiplier = 1
+        end
+    end
+
+    m.vel.x = m.vel.x * speedMultiplier
+    m.vel.z = m.vel.z * speedMultiplier
+end
+
+-- hooks --
+hook_event(HOOK_BEFORE_PHYS_STEP, run_faster)
+
+
+
 
 --[[
     Everything from here down is character data, and is loaded at the end of the file
